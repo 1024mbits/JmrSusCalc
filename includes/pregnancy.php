@@ -1,6 +1,7 @@
 <?php 
 include_once 'pregnancy_language.php'; ?>
 <head>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type='text/javascript'>
 function getdetails(){
 	var sname = $('#jmr_name').val();
