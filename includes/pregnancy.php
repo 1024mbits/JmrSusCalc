@@ -4,6 +4,10 @@ require_once( $parse_uri[0] . 'wp-load.php' );
 include_once 'pregnancy_language.php'; ?>
 <head>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+<link rel="stylesheet" type="text/css" href="/wp-content/plugins/JmrSusCalc/css/jmr_style.css">
+>>>>>>> Stashed changes
 =======
 <link rel="stylesheet" type="text/css" href="/wp-content/plugins/JmrSusCalc/css/jmr_style.css">
 >>>>>>> Stashed changes
