@@ -57,7 +57,7 @@ function jmr_script_calc() {
 
 function crea_form_html() {
 		
-	echo '<iframe width="500" height="500" src="/wp-content/plugins/JmrSusCalc/includes/pregnancy.php" width="300" height="150"></iframe>';   
+	echo '<iframe width="350" height="900" src="/wp-content/plugins/JmrSusCalc/includes/pregnancy.php"></iframe>';   
 }
 // Creo el Shortcode
 add_shortcode('MostrarFormulario','crea_form_html');
