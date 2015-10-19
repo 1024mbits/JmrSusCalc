@@ -64,12 +64,5 @@ add_shortcode('MostrarFormulario','crea_form_html');
 
 // Habilito shortcodes en los widgets
 add_filter('widget_text', 'do_shortcode', 11);
-
-//Control de Versiones
-function jmr_plugin_version() {
-	$plugin_data = get_plugin_data( __FILE__ );
-	$plugin_version = $plugin_data['Version'];
-	return $plugin_version;
-}
 	
 ?>
