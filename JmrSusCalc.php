@@ -1,7 +1,7 @@
 <?php
 /* 
 Plugin Name: Suscripción y Calculadora de embarazo
-Plugin URI: http://github.com/
+Plugin URI: http://1024mbits.github.io/JmrSusCalc/
 Description: Plugin personalizado para generar suscriptores al blog mediante calculadora de embarazo.
 Version: 1.0
 Author: Juan Manuel Rube
