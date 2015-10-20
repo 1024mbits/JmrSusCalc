@@ -3,14 +3,7 @@ $parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
 require_once( $parse_uri[0] . 'wp-load.php' ); 
 include_once 'pregnancy_language.php'; ?>
 <head>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
 <link rel="stylesheet" type="text/css" href="/wp-content/plugins/JmrSusCalc/css/jmr_style.css">
->>>>>>> Stashed changes
-=======
-<link rel="stylesheet" type="text/css" href="/wp-content/plugins/JmrSusCalc/css/jmr_style.css">
->>>>>>> Stashed changes
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type='text/javascript'>
 
@@ -61,6 +54,7 @@ function getdetails(){
 <div class="calculadora">
 		<div class="sep_contenedor_calculadora">
 				<h2>Calcula tu embarazo</h2>
+				<h4>Una matrona te enviará consejos para tu embarazo (1 email cada mes)</h4>
 			<div class="contenedor_calculadora">
 				<div class="grid-box width33">
 					<div class="jmr-o">
@@ -74,10 +68,10 @@ function getdetails(){
 						<div class="cont_seleccion">
 							<h4>¿Cuándo fue el primer día de último período menstrual?</h4>
 							<div class="cont_fecha">
-								<p>Su Nombre (requerido)</br>
-								<input type="text" name="jmr_name" pattern="[a-zA-Z0-9 ]+" value="<?php ( isset( $_POST["jmr_name"] ) ? esc_attr( $_POST["jmr_name"] ) : '' ) ?>" size="40" id="jmr_name" placeholder="Su Nombre aquí" required="required" /></p>
-								<p>Su Email (requerido)</br>
-								<input type="email" name="jmr_email" value="<?php ( isset( $_POST["jmr_email"] ) ? esc_attr( $_POST["jmr_email"] ) : '' ) ?>" size="40" id="jmr_email" placeholder="Su Email aquí" required="required" /></p>
+								<p>Tu Nombre </br>
+								<input type="text" name="jmr_name" pattern="[a-zA-Z0-9 ]+" value="<?php ( isset( $_POST["jmr_name"] ) ? esc_attr( $_POST["jmr_name"] ) : '' ) ?>" size="40" id="jmr_name" placeholder="Tu Nombre" required="required" /></p>
+								<p>Tu Email </br>
+								<input type="email" name="jmr_email" value="<?php ( isset( $_POST["jmr_email"] ) ? esc_attr( $_POST["jmr_email"] ) : '' ) ?>" size="40" id="jmr_email" placeholder="Tu Email" required="required" /></p>
 								<select id="jmr_day" name="jmr_day">
 									<option><?php echo $lang['HTML_SELECT_DAY']; ?></option>
 									<?php for ($i=1;$i<=31;$i++) { echo '<option value="'.$i.'">'.$i.'</option>'; } ?>

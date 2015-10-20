@@ -56,20 +56,22 @@ if ($go =="1" and $check !='' and $check2 !='')
 	}else if(($month==12 && $day>22)||($month==1 && $day<21)){
 		$zodiac = $lang['RESULT_ZODIAC_CAPRICORN'];
 	}
-	$html .= $lang['RESULT_LAST_CYCLE'].strftime("%d de %B de %Y", $last)."<br />";
-	$html .= $lang['RESULT_NEW_BORN'].strftime("%d de %B de %Y", $due).$lang['RESULT_ZODIAC'].$zodiac.".<br />";
-	$html .= $lang['RESULT_CONCEPTION'].strftime("%d de %B de %Y", $conception).$lang['RESULT_TEST'].strftime("%d de %B de %Y", $test)."<br /><br />";
-	$html .= "<strong>".$lang['RESULT_EXTRA_INFO']."</strong><br />";
+	$html .= '<div class="linea_respuesta">' .$lang['RESULT_LAST_CYCLE'].strftime("%d de %B de %Y", $last).'</div>';
+	$html .= '<div class="linea_respuesta felicitaciones">' .$lang['RESULT_NEW_BORN'].strftime("%d de %B de %Y", $due).$lang['RESULT_ZODIAC'].$zodiac.'</div>';
+	$html .= '<div class="linea_respuesta">' .$lang['RESULT_CONCEPTION'].strftime("%d de %B de %Y", $conception).$lang['RESULT_TEST'].strftime("%d de %B de %Y", $test).'</div>';
+	$html .= '<div class="linea_respuesta info_extra"><strong>'.$lang['RESULT_EXTRA_INFO'].'</strong></div>';
 	if ($pregnancy_weeks==0) {
 		$html .= $lang['RESULT_PREGNANCY_NOT']."<br />";
 		$html .= $lang['RESULT_FIRST_TRIM_END_OLD'].strftime("%d de %B de %Y", $secondtrimester).".<br />";
 		$html .= $lang['RESULT_SECOND_TRIM_END_OLD'].strftime("%d de %B de %Y", $thirdtrimester).".<br />";
 	} else {
-		$html .= $lang['RESULT_PREGNANCY'].$lang['RESULT_PREGNANCY_PREGNANT'].$pregnancy_weeks.$weeks."<br />";
-		$html .= $lang['RESULT_FIRST_MOVE'].strftime("%d de %B de %Y", $firstmove).".<br />";
-		$html .= $lang['RESULT_HEART_BEAT'].strftime("%d de %B de %Y", $firstheartbeat).".<br />";
-		$html .= $lang['RESULT_FIRST_TRIM_END'].strftime("%d de %B de %Y", $secondtrimester).".<br />";
-		$html .= $lang['RESULT_SECOND_TRIM_END'].strftime("%d de %B de %Y", $thirdtrimester).".<br />";
+		$html .= '<ul class="lista_calculadora">';
+		$html .= '<li>' .$lang['RESULT_PREGNANCY'].$lang['RESULT_PREGNANCY_PREGNANT'].$pregnancy_weeks.$weeks."</li>";
+		$html .= '<li>' .$lang['RESULT_FIRST_MOVE'].strftime("%d de %B de %Y", $firstmove).'.</li>';
+		$html .= '<li>' .$lang['RESULT_HEART_BEAT'].strftime("%d de %B de %Y", $firstheartbeat).'.</li>';
+		$html .= '<li>' .$lang['RESULT_FIRST_TRIM_END'].strftime("%d de %B de %Y", $secondtrimester).'.</li>';
+		$html .= '<li>' .$lang['RESULT_SECOND_TRIM_END'].strftime("%d de %B de %Y", $thirdtrimester).'.</li>';
+		$html .= '</ul>';
 	}
 	
 	echo $html;

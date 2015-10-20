@@ -1,10 +1,12 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,600italic);
+
 .calculadora {
-    font-family: "Noto Sans", sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
     margin: 1% auto 0;
     width: 100%;
 }
 .calculadora h2 {
-    font-family: "Noto Sans", sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
     font-size: 25px;
     font-weight: 700;
     margin: 5px;
@@ -29,7 +31,7 @@
 .cont_seleccion{float:left;}
 .cont_seleccion h4 {
     color: #656565;
-    font-size: 1.3em;
+    font-size: 1.1em;
     line-height: normal;
     margin: 7% 0 !important;
     padding: 0;
@@ -105,8 +107,8 @@
 }
 .aviso_calculadora{text-align: right;color: #e73135;}
 .linea_respuesta {
-    margin-bottom: 8%;
-    text-align: center;
+    margin-bottom: 2%;
+    text-align: justify;
 }
 .linea_respuesta.felicitaciones{font-size: 18px;text-align: center;}
 .linea_respuesta.info_extra{font-weight: bold;font-size: 14px;font-style: italic;}
@@ -115,4 +117,10 @@
 	width:100%;
 	float:left;
 	margin-bottom:2%;
+    text-align: center;
+}
+
+.lista_calculadora ol, ul {
+    list-style: outside none none;
+    padding-left: 0px;
 }
