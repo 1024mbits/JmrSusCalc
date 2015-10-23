@@ -8,6 +8,7 @@ Author: Juan Manuel Rube
 Author URI: http://www.1024mbits.com
 License: Private
 */
+if ( ! defined( 'ABSPATH' ) ) exit; // Salir si alguien intenta acceder al fichero directamente
 // Instalación de las tablas en la BDD y activación del plugin
 function jmr_install() {
 	global $wpdb;
@@ -55,9 +56,15 @@ function jmr_script_calc() {
 	wp_enqueue_script( 'jmr_jquery' );
 }	
 
-function crea_form_html() {
-		
-	echo '<iframe width="350" height="900" src="/wp-content/plugins/JmrSusCalc/includes/pregnancy.php"></iframe>';   
+function crea_form_html($atts) {
+
+	ob_start();	
+	
+	include dirname( __FILE__ ). '/includes/pregnancy.php'; 
+	$content = ob_get_clean();
+	
+	return $content; 
+   
 }
 // Creo el Shortcode
 add_shortcode('MostrarFormulario','crea_form_html');

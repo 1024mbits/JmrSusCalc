@@ -1,10 +1,6 @@
 <?php
-$parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
-require_once( $parse_uri[0] . 'wp-load.php' ); 
-include_once 'pregnancy_language.php'; ?>
-<head>
-<link rel="stylesheet" type="text/css" href="/wp-content/plugins/JmrSusCalc/css/jmr_style.css">
-<script src="http://code.jquery.com/jquery-latest.js"></script>
+require_once( ABSPATH . '/wp-load.php');
+include dirname( __FILE__ ). '/pregnancy_language.php'; ?>
 <script type='text/javascript'>
 
 function getdetails(){
@@ -41,16 +37,14 @@ function getdetails(){
 	var go = $('#go').val();
 	$.ajax({
 		type: 'POST',
-		url: 'pregnancy_class.php',
+		url: '/wp-content/plugins/JmrSusCalc/includes/pregnancy_class.php',
 		data: {jmr_day:sday, jmr_month:smonth, jmr_year:syear, g:go, jmr_name:sname, jmr_email:smail}
 	}).done(function(pregnancy) {
 		$('#pregnancyContent').html(pregnancy).slideDown('1000');
 	});
 }
 </script>
-</head>
-<html>
-<body>
+
 <div class="calculadora">
 		<div class="sep_contenedor_calculadora">
 				<h2>Calcula tu embarazo</h2>
@@ -68,9 +62,9 @@ function getdetails(){
 						<div class="cont_seleccion">
 							<h4>¿Cuándo fue el primer día de último período menstrual?</h4>
 							<div class="cont_fecha">
-								<p>Tu Nombre </br>
+								<p>
 								<input type="text" name="jmr_name" pattern="[a-zA-Z0-9 ]+" value="<?php ( isset( $_POST["jmr_name"] ) ? esc_attr( $_POST["jmr_name"] ) : '' ) ?>" size="40" id="jmr_name" placeholder="Tu Nombre" required="required" /></p>
-								<p>Tu Email </br>
+								<p>
 								<input type="email" name="jmr_email" value="<?php ( isset( $_POST["jmr_email"] ) ? esc_attr( $_POST["jmr_email"] ) : '' ) ?>" size="40" id="jmr_email" placeholder="Tu Email" required="required" /></p>
 								<select id="jmr_day" name="jmr_day">
 									<option><?php echo $lang['HTML_SELECT_DAY']; ?></option>
@@ -95,7 +89,4 @@ function getdetails(){
 			</div>
 		</div>
 	<div id="pregnancyContent" style="display: block;"></div>
-</div>
-</body>
-</html>
 </div>

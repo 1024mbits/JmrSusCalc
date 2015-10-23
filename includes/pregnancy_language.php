@@ -1,4 +1,6 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Salir si alguien intenta acceder al fichero directamente
+
 $lang = array();
 $lang['HTML_TITLE'] = 'Calculadora de Embarazo';
 $lang['HTML_INTRO'] = 'Dinos la fecha de tu última regla.';
@@ -35,11 +37,11 @@ $lang['RESULT_ZODIAC_SCORPION'] = 'Escorpio';
 $lang['RESULT_ZODIAC_SAGITTARIUS'] = 'Sagitario';
 $lang['RESULT_ZODIAC_CAPRICORN'] = 'Capricornio';
 $lang['RESULT_LAST_CYCLE'] = 'Tu último período empezó el ';
-$lang['RESULT_NEW_BORN'] = 'Enhorabuena! Tu Bebé nacerá aproximadamente el ';
-$lang['RESULT_ZODIAC'] = " con el signo del zodiaco ";
+$lang['RESULT_NEW_BORN'] = '¡Enhorabuena! Tu Bebé nacerá aproximadamente el ';
+$lang['RESULT_ZODIAC'] = " con el signo del zodíaco ";
 $lang['RESULT_CONCEPTION'] = "La Concepción tuvo lugar aproximadamente el ";
 $lang['RESULT_TEST'] = " y una fecha confiable para realizar un test de embarazo sería alrededor del ";
-$lang['RESULT_EXTRA_INFO'] = "Información Útil basada en la fecha de tu última regla";
+$lang['RESULT_EXTRA_INFO'] = "Información Útil basada en la fecha de tu última regla:";
 $lang['RESULT_PREGNANCY'] = "Basándonos en esto, hoy estás ";
 $lang['RESULT_PREGNANCY_PREGNANT'] = "¡EMBARAZADA! de ";
 $lang['RESULT_PREGNANCY_WEEK'] = " semana ";

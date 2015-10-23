@@ -1,3 +1,6 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Salir si alguien intenta acceder al fichero directamente?>
+<!-- Página de administración del plugin-->
 <div class="wrap">
 	<h2>Suscriptores</h2>
 	<div id="poststuff">
