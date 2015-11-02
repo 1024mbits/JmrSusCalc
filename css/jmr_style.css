@@ -269,7 +269,7 @@
     }
 }    
 /* css para escritorio */
-@media only screen and (min-width: 1024px) {    
+@media only screen and (min-width: 960px) {    
     .calculadora {
         font-family: "Source Sans Pro", sans-serif;
         margin: 1% auto 0;
