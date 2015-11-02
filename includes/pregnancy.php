@@ -48,24 +48,20 @@ function getdetails(){
 <div class="calculadora">
 		<div class="sep_contenedor_calculadora">
 				<h2>Calcula tu embarazo</h2>
-				<h4>Una matrona te enviará consejos para tu embarazo (1 email cada mes)</h4>
+				<h4 style="text-align: center;">Una matrona te enviará consejos para tu embarazo (1 email cada mes)</h4>
 			<div class="contenedor_calculadora">
 				<div class="grid-box width33">
 					<div class="jmr-o">
 						<div class="img_calculadora">
-							<img src="/wp-content/plugins/JmrSusCalc/imagenes/embarazada2.jpg" alt="">
+							<img class="img_calculadora" src="/wp-content/plugins/JmrSusCalc/imagenes/embarazada.jpg" alt="">
 						</div>
 					</div>
 				</div>
 				<div class="grid-box width66">
 					<div class="jmr-o">
 						<div class="cont_seleccion">
-							<h4>¿Cuándo fue el primer día de último período menstrual?</h4>
+							<h2>¿Cuándo fue el primer día de último período menstrual?</h2>
 							<div class="cont_fecha">
-								<p>
-								<input type="text" name="jmr_name" pattern="[a-zA-Z0-9 ]+" value="<?php ( isset( $_POST["jmr_name"] ) ? esc_attr( $_POST["jmr_name"] ) : '' ) ?>" size="40" id="jmr_name" placeholder="Tu Nombre" required="required" /></p>
-								<p>
-								<input type="email" name="jmr_email" value="<?php ( isset( $_POST["jmr_email"] ) ? esc_attr( $_POST["jmr_email"] ) : '' ) ?>" size="40" id="jmr_email" placeholder="Tu Email" required="required" /></p>
 								<select id="jmr_day" name="jmr_day">
 									<option><?php echo $lang['HTML_SELECT_DAY']; ?></option>
 									<?php for ($i=1;$i<=31;$i++) { echo '<option value="'.$i.'">'.$i.'</option>'; } ?>
@@ -78,6 +74,8 @@ function getdetails(){
 									<option><?php echo $lang['HTML_SELECT_YEAR']; ?></option>
 									<?php for ($i=date("Y")-1;$i<=date("Y");$i++) { echo '<option value="'.$i.'">'.$i.'</option>'; } ?>
 								</select>
+								<input type="text" name="jmr_name" pattern="[a-zA-Z0-9 ]+" value="<?php ( isset( $_POST["jmr_name"] ) ? esc_attr( $_POST["jmr_name"] ) : '' ) ?>" size="40" id="jmr_name" placeholder="Tu Nombre" required="required" />
+								<input type="email" name="jmr_email" value="<?php ( isset( $_POST["jmr_email"] ) ? esc_attr( $_POST["jmr_email"] ) : '' ) ?>" size="40" id="jmr_email" placeholder="Tu Email" required="required" />
 							</div>
 							<div class="boton_calcular">
 								<input type="hidden" id="go" name="go" value="1" />
