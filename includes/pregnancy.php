@@ -9,6 +9,8 @@ function getdetails(){
 	var sday = $('#jmr_day').val();
 	var smonth = $('#jmr_month').val();
 	var syear = $('#jmr_year').val();
+	var scheck = document.getElementById('jmr_check');
+
 		// Date validation start
 	if ((smonth==4 || smonth==6 || smonth==9 || smonth==11) && sday ==31) {
 		$('#pregnancyContent').html('<?php echo $lang['HTML_WRONG_DATE']; ?>');
@@ -17,22 +19,31 @@ function getdetails(){
 	else if (smonth == 2) {
 		var checkYear = (syear % 4 == 0 && (syear % 100 != 0 || syear % 400 == 0));
 		if (sday> 29 || (sday ==29 && !checkYear)) {
-			$('#pregnancyContent').html('<?php echo $lang['HTML_WRONG_DATE']; ?>');
+			alert('<?php echo $lang['HTML_WRONG_DATE']; ?>');
 			return false;
 		}
 	}
 	else if (syear == <?php echo date('Y'); ?> && smonth == <?php echo date('n'); ?> && sday > <?php echo date('j'); ?>) {
-			$('#pregnancyContent').html('<?php echo $lang['HTML_WRONG_DATE_FAR']; ?>');
+			alert('<?php echo $lang['HTML_WRONG_DATE_FAR']; ?>');
 			return false;
 	}
 	else if (syear == <?php echo date('Y'); ?> && smonth > <?php echo date('n'); ?>) {
-			$('#pregnancyContent').html('<?php echo $lang['HTML_WRONG_DATE_FAR']; ?>');
+			alert('<?php echo $lang['HTML_WRONG_DATE_FAR']; ?>');
 			return false;
 	}
 	else if (syear == '<?php echo $lang['HTML_SELECT_YEAR']; ?>'  ||  smonth == '<?php echo $lang['HTML_SELECT_MONTH']; ?>'  ||  sday == '<?php echo $lang['HTML_SELECT_DAY']; ?>') {
-			$('#pregnancyContent').html('<?php echo $lang['HTML_WRONG_DATE_SELECT']; ?>');
+			alert('<?php echo $lang['HTML_WRONG_DATE_SELECT']; ?>');
 			return false;
 	}
+	else if (sname == ''  ||  smail == '') {
+			alert("Debe rellenar todos los campos por favor.");
+			return false;
+	}
+	if (!scheck.checked ) {
+			alert("Debe aceptar las condiciones de la matrona.");
+			return false;
+	}
+
 	// Date validation end
 	var go = $('#go').val();
 	$.ajax({
@@ -74,12 +85,13 @@ function getdetails(){
 									<option><?php echo $lang['HTML_SELECT_YEAR']; ?></option>
 									<?php for ($i=date("Y")-1;$i<=date("Y");$i++) { echo '<option value="'.$i.'">'.$i.'</option>'; } ?>
 								</select>
-								<input type="text" name="jmr_name" pattern="[a-zA-Z0-9 ]+" value="<?php ( isset( $_POST["jmr_name"] ) ? esc_attr( $_POST["jmr_name"] ) : '' ) ?>" size="40" id="jmr_name" placeholder="Tu Nombre" required="required" />
-								<input type="email" name="jmr_email" value="<?php ( isset( $_POST["jmr_email"] ) ? esc_attr( $_POST["jmr_email"] ) : '' ) ?>" size="40" id="jmr_email" placeholder="Tu Email" required="required" />
+								<input type="text" name="jmr_name" pattern="[a-zA-Z0-9 ]+" value="<?php ( isset( $_POST["jmr_name"] ) ? esc_attr( $_POST["jmr_name"] ) : '' ) ?>" size="40" id="jmr_name" placeholder="Tu Nombre" required />
+								<input type="email" name="jmr_email" value="<?php ( isset( $_POST["jmr_email"] ) ? esc_attr( $_POST["jmr_email"] ) : '' ) ?>" size="40" id="jmr_email" placeholder="Tu Email" required />
 							</div>
 							<div class="boton_calcular">
 								<input type="hidden" id="go" name="go" value="1" />
 								<input type="submit" value="<?php echo $lang['HTML_CALCULATE']; ?>" onClick = "getdetails()" />
+								<input type="checkbox" name="jmr_check" id="jmr_check" value="1" checked="checked" required ><p><a href="#" target="_blank"> He leído las condiciones</a> &nbsp; y acepto recibir correos de la matrona.</p>
 							</div>
 						</div>
 					</div>

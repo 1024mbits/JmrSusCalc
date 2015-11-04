@@ -396,7 +396,7 @@
 
     .contenedor_calculadora,.contenedor_calculadora .grid-box, .contenedor_calculadora .grid-box *{
     	height:auto;
-    	float:left!important;
+    	float:left;
     }
 
     .contenedor_calculadora .width33 {
